@@ -20,7 +20,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
@@ -28,10 +27,33 @@
   color: #61dafb;
 }
 
+#text {
+  font-size: 30px;
+}
+
+#text:before {
+  content: "“";
+  font-size: 60px;
+   
+ 
+}
+#text:after {
+  content: "”";
+  font-size: 60px;
+  right: -20px;
+  bottom: -10px;
+}
+
+#author {
+  font-weight: light;
+  font-size: 20px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

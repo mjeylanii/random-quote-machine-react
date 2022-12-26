@@ -4,7 +4,7 @@ import QuoteBox from "./QuoteBox.js";
 import { useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-
+import { CSSTransition } from "react-transition-group";
 const darkTheme = createTheme({
   palette: {
     mode: "dark",
