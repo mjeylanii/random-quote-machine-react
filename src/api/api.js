@@ -31,7 +31,8 @@ export const fetchQuoteAuthorImage = async (author) => {
   let imageUrl = "";
   if (data.query.pages[Object.keys(data.query.pages)].original) {
     imageUrl = data.query.pages[Object.keys(data.query.pages)].original.source;
-  } else {
+  }
+   else {
     if (author == "Buddha") {
       imageUrl =
         "https://upload.wikimedia.org/wikipedia/commons/a/a2/086_Buddha_and_Sangha_in_a_Cave_at_Siripada_%2820443444405%29.jpg";

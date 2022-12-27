@@ -26,7 +26,10 @@ export default function QuoteBox() {
   const [quoteText, setQuoteText] = useState("");
   const [quoteAuthor, setQuoteAuthor] = useState("Rick Astley");
   const [quoteAuthorImage, setQuoteAuthorImage] = useState("");
-
+  const tweetQuote = () => {
+    const tweetUrl = `https://twitter.com/intent/tweet?text=${quoteText} - ${quoteAuthor}`;
+    window.open(tweetUrl, "_blank");
+  };
   async function fetchNewQuote() {
     console.log("Clicked");
     // Add animation to the text element to fade out
@@ -115,7 +118,13 @@ export default function QuoteBox() {
             direction="row"
             justifyContent="space-around"
           >
-            <Link id="tweet-quote">
+            <Link
+              target="_blank"
+              href="twitter.com/intent/tweet"
+              id="tweet-quote"
+              onClick={tweetQuote}
+            >
+              Tweet
               <span class="mdi mdi-repeat-variant"></span>
             </Link>
             <Button
