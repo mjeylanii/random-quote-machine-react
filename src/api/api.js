@@ -11,9 +11,15 @@ export const fetchQuoteData = async () => {
   });
   const tempData = await response.text();
   console.log(tempData.substring(2, tempData.length - 1));
-  const quoteObj = JSON.parse(tempData.substring(2, tempData.length - 1));
-  console.log(quoteObj);
-  return quoteObj;
+  const cleanedQuoteString = tempData.replace(/[^\x00-\x7F]/g, "");
+  try {
+    const quoteObj = JSON.parse(
+      cleanedQuoteString.substring(2, cleanedQuoteString.length - 1)
+    );
+    return quoteObj;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const fetchQuoteAuthorImage = async (author) => {
@@ -29,11 +35,6 @@ export const fetchQuoteAuthorImage = async (author) => {
     if (author == "Buddha") {
       imageUrl =
         "https://upload.wikimedia.org/wikipedia/commons/a/a2/086_Buddha_and_Sangha_in_a_Cave_at_Siripada_%2820443444405%29.jpg";
-    }
-    if (author == "Lao Tzu") {
-    } else {
-      imageUrl =
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Rick_Astley_Dallas.jpg/1280px-Rick_Astley_Dallas.jpg";
     }
   }
 

@@ -30,11 +30,17 @@ export default function QuoteBox() {
   async function fetchNewQuote() {
     console.log("Clicked");
     // Add animation to the text element to fade out
+    setQuoteAuthorImage("");
     setQuoteText("");
     await new Promise((resolve) => setTimeout(resolve, 300));
     const response = await fetchQuoteData();
     // Add animation to the text element to fade in
-    setQuoteText(response.quoteText);
+    try {
+      setQuoteText(response.quoteText);
+    } catch (error) {
+      console.log(error);
+    }
+
     if (response.quoteAuthor !== "") {
       setQuoteAuthor(response.quoteAuthor);
     } else {
