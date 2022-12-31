@@ -118,7 +118,9 @@ export default function QuoteBox() {
             direction="row"
             justifyContent="space-around"
           >
-            <Link
+            <Button
+              variant="contained"
+              component={Link}
               target="_blank"
               href="twitter.com/intent/tweet"
               id="tweet-quote"
@@ -126,7 +128,7 @@ export default function QuoteBox() {
             >
               Tweet
               <span class="mdi mdi-repeat-variant"></span>
-            </Link>
+            </Button>
             <Button
               id="new-quote"
               onClick={fetchNewQuote}
