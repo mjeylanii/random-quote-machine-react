@@ -7,5 +7,5 @@
 </ul>
 
 <a href="https://mjeylanii.github.io/random-quote-machine-react/">
-Demon link
+Demo link
 <a>
